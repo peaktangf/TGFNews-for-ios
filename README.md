@@ -2,6 +2,7 @@
 * 高仿网易新闻，加入了很多其他的元素，比如天气。特别适合用来当做参考，该项目同时还有Android版本。
 
 ## 效果展示
+![效果展示](https://github.com/gaofengtan/TGFNews-for-ios/blob/master/%E5%B1%95%E7%A4%BA.gif)
 
 ## 功能介绍
 * 1、首页高仿网易新闻客户端
