@@ -1,0 +1,121 @@
+//
+//  TGFNews-Prefix.pch
+//  TGFNews
+//
+//  Created by 谭高丰 on 16/1/19.
+//  Copyright © 2016年 谭高丰. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//第三方库
+#import "AppDelegate.h"
+#import <IQKeyboardManager.h>
+#import <Masonry.h>
+#import <BlocksKit.h>                         //block库
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <UIImageView+WebCache.h>              //图片缓存
+#import <MJRefresh.h>
+#import <MJExtension.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "HudManager.h"                        //自定义提示控件
+#import <DKNightVersion.h>                    //夜间模式切换库
+#import "UIColor+Hex.h"
+#import "UIView+Frame.h"
+#import "UserDefault.h"                       //管理本地存储数据类
+#import "Helper.h"
+
+#endif
+
+/**
+ *  常用变量
+ */
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+
+#define TGFNewsAppDelegate  ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
+
+#define ESWeak(var, weakVar) __weak __typeof(&*var) weakVar = var
+#define ESStrong_DoNotCheckNil(weakVar, _var) __typeof(&*weakVar) _var = weakVar
+#define ESStrong(weakVar, _var) ESStrong_DoNotCheckNil(weakVar, _var); if (!_var) return;
+
+#define ESWeak_(var) ESWeak(var, weak_##var);
+#define ESStrong_(var) ESStrong(weak_##var, _##var);
+
+/** defines a weak `self` named `__weakSelf` */
+#define ESWeakSelf      ESWeak(self, __weakSelf);
+/** defines a strong `self` named `_self` from `__weakSelf` */
+#define ESStrongSelf    ESStrong(__weakSelf, _self);
+
+
+#define  kBackButtonFontSize 16
+#define  kNavTitleFontSize 18
+
+//用户接口
+//测试服务器接口
+#define USER_URL @"http://127.0.0.1:63342/htdocs/myapp/"
+//图片地址
+//#define PHOTO_URL @"http://127.0.0.1:63342/htdocs/myapp/img/"
+#define PHOTO_URL(sufStr) [NSURL URLWithString:[NSString stringWithFormat:@"http://127.0.0.1:63342/htdocs/myapp/img/%@",sufStr]]
+
+static NSString *LOGIN_CODE = @"login.php";//登录
+static NSString *REGISTER_CODE = @"register.php";//注册
+static NSString *UPLOAD_HEAD_CODE = @"uploadHead.php";//上传用户头像
+static NSString *RESET_PWD_CODE = @"reset.php";//修改密码
+static NSString *REVISE_NAME_CODE = @"reviseName.php";//修改昵称
+static NSString *REVISE_SEX_CODE = @"reviseSex.php";//修改性别
+static NSString *REVISE_BIRTHDAY_CODE = @"reviseBirthday.php";//修改生日
+static NSString *REVISE_PHONE_CODE = @"revisePhone.php";//修改手机号
+
+static NSString *ADD_CITY_CODE = @"addCollectionCity.php";//添加天气城市
+static NSString *ADD_NEWS_CODE = @"addCollectionNews.php";//添加收藏的新闻
+static NSString *CHECK_NEWS_CODE = @"checkNewsCollectionIds.php";//获取收藏到的新闻id
+static NSString *CHECK_CITY_CODE = @"checkCityCollections.php";//获取天气城市
+
+
+//新闻接口
+#define NEWS_URL @"http://c.m.163.com/"
+
+#define NEWS_URL_ARRAY @[@"headline/T1348647853363",@"list/T1348649145984",@"list/T1348649654285",@"list/T1351233117091",@"list/T1348648517839",@"list/T1348650593803",@"list/T1348648650048",@"list/T1348649580692"]
+#define NEWS_TITLE_ARRAY @[@"头条",@"NBA",@"手机",@"移动互联",@"时尚",@"娱乐",@"电影",@"科技"]
+
+//天气接口
+#define WEATHER_URL @"http://apis.baidu.com/apistore/weatherservice/"
+
+//新闻字体数组
+#define NEWS_BODY_FONT_MARK @[@"小",@"中",@"大",@"超大",@"巨大",@"巨无霸"]
+#define NEWS_BODY_FONT @[@"18",@"20",@"22",@"24",@"26",@"28"]
+
+/**
+ *  app颜色
+ */
+static NSString *NIGHT_NAVBAR = @"#590a31";
+static NSString *NIGHT_BACKGROUND = @"#222222";
+static NSString *NIGHT_CELL_BACKGROUND = @"#222222";
+static NSString *NIGHT_NEWS_BODYTEXT = @"#909090";
+
+static NSString *NORMAL_NAVBAR = @"#a90040";
+static NSString *NORMAL_BACKGROUND = @"#ffffff";
+static NSString *NORMAL_NEWS_BODYTEXT = @"#000000";
+static NSString *NORMAL_NEWS_BOTTON = @"#f5f5f5";
+static NSString *NORMAL_TABLESECTION_BG = @"#efeff4";
+
+//appkey
+static NSString *UMAPPKEY = @"56d589bde0f55a9fb50003e7";
+
+
+
+
+
+
+
+
+

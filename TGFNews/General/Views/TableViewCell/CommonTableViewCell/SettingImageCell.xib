@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingImageCell" rowHeight="68" id="atY-UW-dZp" customClass="CommonTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="atY-UW-dZp" id="KhM-aQ-Q78">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wx5-1b-BgB" customClass="DesigbableImageView">
+                        <rect key="frame" x="238" y="11" width="46" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="Lrw-uH-l6M"/>
+                            <constraint firstAttribute="width" constant="46" id="QAv-40-jfL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="23"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nly-Es-wHQ">
+                        <rect key="frame" x="14" y="23" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="82Y-PV-2Vs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wx5-1b-BgB" firstAttribute="centerY" secondItem="nly-Es-wHQ" secondAttribute="centerY" id="WrB-kh-QmB"/>
+                    <constraint firstItem="nly-Es-wHQ" firstAttribute="centerY" secondItem="KhM-aQ-Q78" secondAttribute="centerY" id="X4A-27-YYW"/>
+                    <constraint firstAttribute="trailing" secondItem="wx5-1b-BgB" secondAttribute="trailing" constant="3" id="f5q-Oy-waZ"/>
+                    <constraint firstItem="nly-Es-wHQ" firstAttribute="leading" secondItem="KhM-aQ-Q78" secondAttribute="leading" constant="14" id="qxX-Q2-Gso"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headImageView" destination="wx5-1b-BgB" id="OfB-UX-RcJ"/>
+                <outlet property="titleLabel" destination="nly-Es-wHQ" id="FCV-i6-pwr"/>
+            </connections>
+            <point key="canvasLocation" x="248" y="241.5"/>
+        </tableViewCell>
+    </objects>
+</document>
